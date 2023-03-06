@@ -1,0 +1,77 @@
+{
+  "questions": [
+    {
+      "title": "Which country won the 2018 FIFA World Cup?",
+      "answer_1": "Brazil",
+      "answer_2": "France",
+      "answer_3": "Germany",
+      "answer_4": "Argentina",
+      "right_answer": "France"
+    },
+    {
+      "title": "Who is the all-time top scorer in the UEFA Champions League?",
+      "answer_1": "Lionel Messi",
+      "answer_2": "Cristiano Ronaldo",
+      "answer_3": "Raúl González",
+      "answer_4": "Robert Lewandowski",
+      "right_answer": "Cristiano Ronaldo"
+    },
+    {
+      "title": "Which English club has won the most domestic league titles?",
+      "answer_1": "Manchester United",
+      "answer_2": "Liverpool",
+      "answer_3": "Arsenal",
+      "answer_4": "Chelsea",
+      "right_answer": "Manchester United"
+    },
+    {
+      "title": "Who is the current coach of the Argentina national team?",
+      "answer_1": "Diego Maradona",
+      "answer_2": "Lionel Scaloni",
+      "answer_3": "Jorge Sampaoli",
+      "answer_4": "Mauricio Pochettino",
+      "right_answer": "Lionel Scaloni"
+    },
+    {
+      "title": "Which player won the Ballon d'Or award in 2020?",
+      "answer_1": "Lionel Messi",
+      "answer_2": "Robert Lewandowski",
+      "answer_3": "Cristiano Ronaldo",
+      "answer_4": "Neymar",
+      "right_answer": "Robert Lewandowski"
+    },
+    {
+      "title": "Which club has won the most UEFA Champions League titles?",
+      "answer_1": "Real Madrid",
+      "answer_2": "Barcelona",
+      "answer_3": "Bayern Munich",
+      "answer_4": "Liverpool",
+      "right_answer": "Real Madrid"
+    },
+    {
+      "title": "Which player has won the most FIFA World Cup titles?",
+      "answer_1": "Pelé",
+      "answer_2": "Diego Maradona",
+      "answer_3": "Lionel Messi",
+      "answer_4": "Zinedine Zidane",
+      "right_answer": "Pelé"
+    },
+    {
+      "title": "Which African country has won the most Africa Cup of Nations titles?",
+      "answer_1": "Ghana",
+      "answer_2": "Egypt",
+      "answer_3": "Nigeria",
+      "answer_4": "Cameroon",
+      "right_answer": "Egypt"
+    },
+    {
+      "title": "Which player has won the most Premier League Golden Boot awards?",
+      "answer_1": "Alan Shearer",
+      "answer_2": "Thierry Henry",
+      "answer_3": "Mohamed Salah",
+      "answer_4": "Harry Kane",
+      "right_answer": "Alan Shearer"
+    }
+  ]
+}
+ 
