@@ -1,5 +1,4 @@
-{
-  "questions": [
+[
     {
       "title": "Which country won the 2018 FIFA World Cup?",
       "answer_1": "Brazil",
@@ -73,5 +72,4 @@
       "right_answer": "Alan Shearer"
     }
   ]
-}
  
