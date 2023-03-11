@@ -3,8 +3,11 @@ let countSpan = document.querySelector(".quiz-info .count span");
 let bulletsSpanContainer = document.querySelector(".bullets .spans");
 let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
+let submitButton = document.querySelector(".submit-button")
+
 //   Set Options
 let currentIndex = 0;
+let rightAnswers = 0;
 
 
 function getQuestions() {
@@ -16,13 +19,27 @@ function getQuestions() {
             let questionsObject = JSON.parse(this.responseText);
 
             let qCount = questionsObject.length
-            console.log(qCount);
+            
 
             // Creat Bullets + Set Questions Count
             createBullets(qCount);
 
             // Add Question Data
             addQuestionData(questionsObject[currentIndex], qCount);
+
+            // Click On Submit
+            submitButton.onclick = () => {
+                // Get Right Answer
+                let theRightAnswer = questionsObject[currentIndex].right_answer;
+             
+
+                // Increase Index
+                currentIndex++;
+
+                // Check The Answer
+                checkAnswer(theRightAnswer, qCount);
+            };
+
         }
     };
 
@@ -88,6 +105,23 @@ function addQuestionData(obj , count) {
         mainDiv.appendChild(theLabel);
         answersArea.appendChild(mainDiv);
 
+        
+    }
+    
+}
+
+function checkAnswer(rAnswer, count) {
+
+    let answers = document.getElementsByName("question");
+    let theChoosenAnswer;
+
+    for (let i = 0; i < answers.length; i++) {
+        if (answers[i].checked) {
+            theChoosenAnswer = answers[i].dataset.answer;
+        if (rAnswer === theChoosenAnswer) {
+            rightAnswers++;
+        }
+        }
         
     }
     
