@@ -38,6 +38,17 @@ function getQuestions() {
 
                 // Check The Answer
                 checkAnswer(theRightAnswer, qCount);
+
+                // Remove Previous Question
+                quizArea.innerHTML = '';
+                answersArea.innerHTML = '';
+                // Add New Question
+                addQuestionData(questionsObject[currentIndex], qCount);
+                
+                // Handle Bullets Class
+                handleBullets();
+
+
             };
 
         }
@@ -125,4 +136,14 @@ function checkAnswer(rAnswer, count) {
         
     }
     
+}
+
+function handleBullets() {
+    let bulletsSpans = document.querySelectorAll(".bullets .spans span");
+    let arrayOfSpans = Array.from(bulletsSpans);
+    arrayOfSpans.forEach((span, index) => {
+        if (currentIndex === index) {
+            span.className = "on";
+        }
+    })
 }
