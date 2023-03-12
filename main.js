@@ -1,9 +1,12 @@
 // Sellect Elements
 let countSpan = document.querySelector(".quiz-info .count span");
+let bullets = document.querySelector(".bullets");
 let bulletsSpanContainer = document.querySelector(".bullets .spans");
 let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
-let submitButton = document.querySelector(".submit-button")
+let submitButton = document.querySelector(".submit-button");
+let resultsContainer = document.querySelector(".results");
+
 
 //   Set Options
 let currentIndex = 0;
@@ -48,6 +51,8 @@ function getQuestions() {
                 // Handle Bullets Class
                 handleBullets();
 
+                // Show Results
+                showResults(qCount);
 
             };
 
@@ -79,7 +84,8 @@ function createBullets(num) {
 }
 
 function addQuestionData(obj , count) {
-// Creat H2 Question Title
+   if (currentIndex < count) {
+    // Creat H2 Question Title
     let questionTitle = document.createElement("h2");
     // Creat Question Text
     let questionText = document.createTextNode(obj.title);
@@ -118,6 +124,7 @@ function addQuestionData(obj , count) {
 
         
     }
+   }
     
 }
 
@@ -146,4 +153,27 @@ function handleBullets() {
             span.className = "on";
         }
     })
+}
+
+function showResults(count) {
+    let theResults;
+    if (currentIndex === count) {
+        quizArea.remove();
+        answersArea.remove();
+        submitButton.remove();
+        bullets.remove();
+
+        if (rightAnswers > (count / 2) && rightAnswers < count) {
+            theResults = `<span class="good">Good</span>, ${rightAnswers} Out Of ${count} `
+        } else if(rightAnswers === count){
+             theResults = `<span class="perfect">Perfect</span>, All Answers is right`
+        } else {
+            theResults = `<span class="bad">Bad</span>, just ${rightAnswers} Out Of ${count}`
+        }
+        resultsContainer.innerHTML = theResults;
+        resultsContainer.style.padding = '10px';
+        resultsContainer.style.backgroundColor = 'white';
+        resultsContainer.style.marginTop = '10px';
+
+    }
 }
