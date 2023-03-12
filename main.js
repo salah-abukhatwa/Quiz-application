@@ -6,11 +6,13 @@ let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
 let submitButton = document.querySelector(".submit-button");
 let resultsContainer = document.querySelector(".results");
+let countdownElement = document.querySelector(".countdown");
 
 
 //   Set Options
 let currentIndex = 0;
 let rightAnswers = 0;
+let countdownInterval;
 
 
 function getQuestions() {
@@ -29,6 +31,9 @@ function getQuestions() {
 
             // Add Question Data
             addQuestionData(questionsObject[currentIndex], qCount);
+
+            // Start Countdown
+            countdown(5 , qCount)
 
             // Click On Submit
             submitButton.onclick = () => {
@@ -176,4 +181,27 @@ function showResults(count) {
         resultsContainer.style.marginTop = '10px';
 
     }
+}
+
+function countdown(duratin, count) {
+    if (currentIndex < count) {
+        
+        let minutes, seconds;
+        countdownInterval = setInterval(function () {
+            minutes = parseInt(duratin / 60);
+            seconds = parseInt(duratin % 60);
+
+            minutes = minutes < 10 ? `0${minutes}` : minutes ;
+            seconds = seconds < 10 ? `0${seconds}` : seconds ;
+            
+
+            countdownElement.innerHTML = `${minutes}: ${seconds}`;
+
+            if (--duratin < 0) {
+                clearInterval(countdownInterval);
+                console.log("finish")
+            }
+        }, 1000)
+    }
+    
 }
