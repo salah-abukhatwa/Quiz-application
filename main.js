@@ -32,6 +32,7 @@ function getQuestions() {
             // Add Question Data
             addQuestionData(questionsObject[currentIndex], qCount);
 
+       
             // Start Countdown
             countdown(5 , qCount)
 
@@ -50,6 +51,9 @@ function getQuestions() {
                 // Remove Previous Question
                 quizArea.innerHTML = '';
                 answersArea.innerHTML = '';
+                     clearInterval(countdownInterval);
+                // Start Countdown
+                countdown(5 , qCount)
                 // Add New Question
                 addQuestionData(questionsObject[currentIndex], qCount);
                 
@@ -199,7 +203,7 @@ function countdown(duratin, count) {
 
             if (--duratin < 0) {
                 clearInterval(countdownInterval);
-                console.log("finish")
+                submitButton.click();
             }
         }, 1000)
     }
